@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>NOUVELLE</title>
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-6 offset-3 mt-5">
+        <div class="card">
+            <div class="card-header bg-dark text-white text-center">
+                <h3>Ajout d'une nouvelle petition</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" th:action="@{save}">
+                    <div>
+                        <label for="titre">Titre</label>
+                        <input id="titre" class="form-control" type="text" name="titre" th:value="${petition.titre}">
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <textarea class="form-control" type="text" name="description" th:value="${petition.description}"></textarea>
+                    </div>
+                    <div>
+                        <label>Date</label>
+                        <input class="form-control" type="date" name="dateCreation" th:value="${petition.dateCreation}">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2" align="center">enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  ==================================  -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOcFq6QMCBpGKYJZiOQvZy5PBQalQGQLdzWRbzGphG2pK4En+59QN0ZH77Lxa" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6pLsNO5i+dz4l+76SL5aRqJpGhLjBlD" crossorigin="anonymous"></script>
+</body>
+</html>

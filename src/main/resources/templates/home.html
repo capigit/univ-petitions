@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>PETITION</title>
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="container mt-2">
+        <form method="get" th:action="@{index}" align="center">
+            <input class="form-control me-2" type="text" placeholder="entrer votre recherche" name="keyword">
+            <button class="btn btn-outline-primary mt-2" type="submit"> chercher </button>
+        </form>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 mb-4" th:each="p:${listPetitions}">
+                <div class="card h-100">
+                    <h4 class="card-title text-center bg-dark text-white" th:text="${p.titre}"></h4>
+                    <div class="card-body d-flex flex-column">
+                        <p th:text="${p.description}"> </p>
+                        <p th:text="${p.dateCreation}"> </p>
+                    </div>
+                    <div class="card-footer" align="center">
+                        <a href="#" class="text-white" th:text="${p.id}"></a>
+                        <a class="btn btn-success">
+                            signer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  ==================================  -->
+</body>
+</html>
