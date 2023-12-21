@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class ConfigSecurity {
 
-    /*@Bean
+    @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http
                 .csrf(Customizer.withDefaults())
@@ -22,6 +22,6 @@ public class ConfigSecurity {
                         .logoutSuccessUrl("/").permitAll()
                         .deleteCookies("JSESSIONID"))
                 .build();
-    }*/
+    }
 
 }
